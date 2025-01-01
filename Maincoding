@@ -1,0 +1,76 @@
+import java.util.Scanner;
+
+public class ELearningApp {
+
+    public static void main(String[] args) {
+        // Display the main menu
+        showMainMenu();
+    }
+
+    public static void showMainMenu() {
+        Scanner scanner = new Scanner(System.in);
+        int choice;
+
+        System.out.println("=======================================");
+        System.out.println("       Welcome to E-Learning App       ");
+        System.out.println("=======================================");
+        System.out.println("1. View Courses");
+        System.out.println("2. Login");
+        System.out.println("3. Register");
+        System.out.println("4. Exit");
+        System.out.println("=======================================");
+        System.out.print("Please enter your choice: ");
+
+        try {
+            choice = scanner.nextInt();
+
+            switch (choice) {
+                case 1:
+                    viewCourses();
+                    break;
+                case 2:
+                    login();
+                    break;
+                case 3:
+                    register();
+                    break;
+                case 4:
+                    System.out.println("Thank you for using E-Learning App. Goodbye!");
+                    break;
+                default:
+                    System.out.println("Invalid choice! Please select a valid option.");
+                    showMainMenu();
+            }
+        } catch (Exception e) {
+            System.out.println("Invalid input! Please enter a number.");
+            scanner.next(); // Clear the invalid input
+            showMainMenu();
+        } finally {
+            scanner.close();
+        }
+    }
+
+    public static void viewCourses() {
+        System.out.println("\nAvailable Courses:");
+        System.out.println("1. Java Programming");
+        System.out.println("2. Web Development");
+        System.out.println("3. Data Science");
+        System.out.println("4. Return to Main Menu");
+
+        // Logic for selecting or viewing course details can go here
+        System.out.println("\nReturning to Main Menu...\n");
+        showMainMenu();
+    }
+
+    public static void login() {
+        System.out.println("\nLogin Functionality is Under Construction.");
+        System.out.println("Returning to Main Menu...\n");
+        showMainMenu();
+    }
+
+    public static void register() {
+        System.out.println("\nRegistration Functionality is Under Construction.");
+        System.out.println("Returning to Main Menu...\n");
+        showMainMenu();
+    }
+}
