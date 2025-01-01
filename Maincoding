@@ -17,7 +17,8 @@ public class ELearningApp {
         System.out.println("1. View Courses");
         System.out.println("2. Login");
         System.out.println("3. Register");
-        System.out.println("4. Exit");
+        System.out.println("4. Take a Quiz");
+        System.out.println("5. Exit");
         System.out.println("=======================================");
         System.out.print("Please enter your choice: ");
 
@@ -35,6 +36,9 @@ public class ELearningApp {
                     register();
                     break;
                 case 4:
+                    takeQuiz();
+                    break;
+                case 5:
                     System.out.println("Thank you for using E-Learning App. Goodbye!");
                     break;
                 default:
@@ -71,6 +75,55 @@ public class ELearningApp {
     public static void register() {
         System.out.println("\nRegistration Functionality is Under Construction.");
         System.out.println("Returning to Main Menu...\n");
+        showMainMenu();
+    }
+
+    public static void takeQuiz() {
+        Scanner scanner = new Scanner(System.in);
+        int score = 0;
+
+        System.out.println("\n=======================================");
+        System.out.println("              Quiz Time!               ");
+        System.out.println("=======================================");
+
+        System.out.println("Q1. What is the capital of France?");
+        System.out.println("1. Madrid");
+        System.out.println("2. Berlin");
+        System.out.println("3. Paris");
+        System.out.println("4. Rome");
+        System.out.print("Enter your answer (1-4): ");
+        int answer1 = scanner.nextInt();
+        if (answer1 == 3) {
+            score++;
+        }
+
+        System.out.println("\nQ2. What does JVM stand for?");
+        System.out.println("1. Java Virtual Machine");
+        System.out.println("2. Java Verification Method");
+        System.out.println("3. Java Variable Module");
+        System.out.println("4. None of the above");
+        System.out.print("Enter your answer (1-4): ");
+        int answer2 = scanner.nextInt();
+        if (answer2 == 1) {
+            score++;
+        }
+
+        System.out.println("\nQ3. Which keyword is used to inherit a class in Java?");
+        System.out.println("1. extends");
+        System.out.println("2. implements");
+        System.out.println("3. inherit");
+        System.out.println("4. super");
+        System.out.print("Enter your answer (1-4): ");
+        int answer3 = scanner.nextInt();
+        if (answer3 == 1) {
+            score++;
+        }
+
+        System.out.println("\n=======================================");
+        System.out.println("Your Quiz Score: " + score + "/3");
+        System.out.println("=======================================");
+        System.out.println("\nReturning to Main Menu...\n");
+
         showMainMenu();
     }
 }
